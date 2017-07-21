@@ -81,8 +81,7 @@ function Packager(outputDir, targetOS, platforms, version, versionTag, moduleApi
 	this.packagers = {
 		'android': this.zipAndroid.bind(this),
 		'ios': this.zipIOS.bind(this),
-		'windows': this.zipWindows.bind(this),
-		'mobileweb': this.zipMobileWeb.bind(this)
+		'windows': this.zipWindows.bind(this)
 	};
 	// Location where we build up the zip file contents
 	this.zipDir = path.join(this.outputDir, 'ziptmp');
@@ -114,12 +113,6 @@ Packager.prototype.zipIOS = function(next) {
 	var IOS = require('./ios');
 	// FIXME Pass along the version/gitHash/options!
 	new IOS({sdkVersion: this.version, gitHash: this.gitHash, timestamp: this.timestamp}).package(this, next);
-};
-
-Packager.prototype.zipMobileWeb = function(next) {
-	var MobileWeb = require('./mobileweb');
-	// FIXME Pass along the version/gitHash/options!
-	new MobileWeb({sdkVersion: this.version, gitHash: this.gitHash, timestamp: this.timestamp}).package(this, next);
 };
 
 Packager.prototype.zipWindows = function(next) {

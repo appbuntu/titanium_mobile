@@ -3,7 +3,7 @@
 var async = require('async'),
 	program = require('commander'),
 	platforms = [],
-	ALL_PLATFORMS = ['ios', 'android', 'mobileweb', 'windows'];
+	ALL_PLATFORMS = ['ios', 'android', 'windows'];
 
 program
 	.parse(process.argv);

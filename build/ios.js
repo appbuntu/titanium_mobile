@@ -72,7 +72,7 @@ IOS.prototype.build = function (next) {
 }
 
 IOS.prototype.package = function (packager, next) {
-	// FIXME This is a hot mess. Why can't we place artifacts in their proper location already like mobileweb or Windows?
+	// FIXME This is a hot mess. Why can't we place artifacts in their proper location already like Windows?
 	console.log('Zipping iOS platform...');
 	var DEST_IOS = path.join(packager.zipSDKDir, 'iphone');
 
