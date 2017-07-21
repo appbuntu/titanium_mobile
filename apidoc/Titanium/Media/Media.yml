@@ -328,7 +328,7 @@ methods:
   - name: vibrate
     summary: Makes the device vibrate.
     description: |
-        On Android and Mobile Web, a `pattern` argument can be provided to specify a
+        On Android, a `pattern` argument can be provided to specify a
         vibration pattern.
 
         The `pattern` is an array of Number values.  Each number in the array is
@@ -340,8 +340,6 @@ methods:
 
         Would cause the vibration to start immediately (delay = 0), and perform three
         long vibrations (500 ms) separated by short pauses (100ms).
-
-        On Mobile Web, calling `vibrate` without a `pattern` will stop the vibration.
     parameters:
       - name: pattern
         summary: Array of values identifying a vibrate pattern (only used on Android).
@@ -1655,7 +1653,7 @@ properties:
     type: [MediaQueryInfoType, String]
   - name: isCompilation
     summary: |
-        Filter by whether or not the item is a compilation. 
+        Filter by whether or not the item is a compilation.
         The value should be a Boolean.
     type: [MediaQueryInfoType, Boolean]
   - name: playCount
@@ -1683,14 +1681,14 @@ properties:
     description: Available in Titanium SDK 6.1.0 and later.
     type: [MediaQueryInfoType, Number]
   - name: isCloudItem
-    summary: | 
-        Filter by whether or not the item is a cloud item. 
+    summary: |
+        Filter by whether or not the item is a cloud item.
         Value should be a Boolean.
     description: Available in Titanium SDK 6.1.0 and later.
     type: [MediaQueryInfoType, Boolean]
   - name: hasProtectedAsset
-    summary: | 
-        Filter by whether or not the item is a protected asset. 
+    summary: |
+        Filter by whether or not the item is a protected asset.
         Value should be a Boolean.
     description: Available in Titanium SDK 6.1.0 and later.
     type: [MediaQueryInfoType, Boolean]
@@ -1807,7 +1805,7 @@ properties:
     summary: Transformation matrix to apply to the camera or photogallery view.
     description: |
         Can be used to size and position the camera or photogallery view behind an overlay view.
-        iOS 10 note: There was a [known iOS 10 issue](http://openradar.appspot.com/28232651) caused by Apple 
+        iOS 10 note: There was a [known iOS 10 issue](http://openradar.appspot.com/28232651) caused by Apple
         that breaks the native camera transformation. Apple fixed this issue in the iOS 10.2 release.
     type: Titanium.UI.2DMatrix
     default: identity matrix
