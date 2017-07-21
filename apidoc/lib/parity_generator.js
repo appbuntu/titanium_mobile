@@ -134,8 +134,6 @@ exports.exportData = function exportHTML(apis) {
 	if ('ipad' in rv.coverage) { coverage.ipad = rv.coverage.ipad; delete rv.coverage.ipad; }
 	if ('android' in rv.coverage) { coverage.android = rv.coverage.android; delete rv.coverage.android; }
 	if ('windowsphone' in rv.coverage) { coverage.windowsphone = rv.coverage.windowsphone; delete rv.coverage.windowsphone; }
-	if ('blackberry' in rv.coverage) { coverage.blackberry = rv.coverage.blackberry; delete rv.coverage.blackberry; }
-	if ('mobileweb' in rv.coverage) { coverage.mobileweb = rv.coverage.mobileweb; delete rv.coverage.mobileweb; }
 
 	for (var name in rv.proxies) {
 		removeKeys(rv.proxies[name].platforms, rv.coverage);
