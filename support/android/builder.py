@@ -854,7 +854,7 @@ class Builder(object):
 			for root, dirs, files in os.walk(topdir):
 				remove_ignored_dirs(dirs)
 				for d in dirs:
-					if d == "iphone" or d == "mobileweb":
+					if d == "iphone":
 						dirs.remove(d)
 				for filename in files:
 					if filename.startswith("_"):
@@ -916,7 +916,7 @@ class Builder(object):
 					if os.path.exists(path.replace(resources_dir, android_resources_dir, 1)):
 						continue
 					dest = make_relative(path, resources_dir, self.assets_resources_dir)
-				if path.startswith(os.path.join(resources_dir, "iphone")) or path.startswith(os.path.join(resources_dir, "mobileweb")) or path.startswith(os.path.join(resources_dir, "blackberry")):
+				if path.startswith(os.path.join(resources_dir, "iphone")) or path.startswith(os.path.join(resources_dir, "blackberry")):
 					continue
 				parent = os.path.dirname(dest)
 				if not os.path.exists(parent):

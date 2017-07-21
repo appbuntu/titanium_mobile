@@ -33,15 +33,6 @@
 			<activity url="suites/android/android/jsActivity.js"/>
 		</activities>
 	</android>
-	<mobileweb>
-		<precache>
-		</precache>
-		<splash>
-			<enabled>true</enabled>
-			<inline-css-images>true</inline-css-images>
-		</splash>
-		<theme>default</theme>
-	</mobileweb>
 	<modules>
 	</modules>
 	<property name="ti.android.bug2373.disableDetection" type="bool">true</property>
