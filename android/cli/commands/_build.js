@@ -2489,7 +2489,7 @@ AndroidBuilder.prototype.copyResources = function copyResources(next) {
 			copyDir.call(this, {
 				src: src,
 				dest: this.buildBinAssetsResourcesDir,
-				ignoreRootDirs: ti.availablePlatformsNames
+				ignoreRootDirs: ti.allPlatformNames
 			}, cb);
 		},
 

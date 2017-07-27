@@ -44,8 +44,6 @@ var appc = require('node-appc'),
 	series = appc.async.series,
 	version = appc.version;
 
-var platformsRegExp = /^(android|ios|iphone|ipad|mobileweb|blackberry|windows|tizen)$/;
-
 function iOSBuilder() {
 	Builder.apply(this, arguments);
 
@@ -66,7 +64,7 @@ function iOSBuilder() {
 	// list of available build-targets
 	this.targets = ['simulator', 'device', 'dist-appstore', 'dist-adhoc'];
 
-	// object of device families to map the --device-family parameter to the 
+	// object of device families to map the --device-family parameter to the
 	// native TARGETED_DEVICE_FAMILY build-setting
 	this.deviceFamilies = {
 		iphone: '1',
@@ -78,8 +76,8 @@ function iOSBuilder() {
 	// device-family set by the --device-family parameter
 	this.deviceFamily = null;
 
-	// blacklisted files and directories that throw an error when used and will 
-	// lead to a rejection when submitted 
+	// blacklisted files and directories that throw an error when used and will
+	// lead to a rejection when submitted
 	this.blacklistDirectories = [
 		'contents',
 		'resources',
@@ -96,7 +94,7 @@ function iOSBuilder() {
 	];
 
 	// graylisted directories that throw a warning when used and may lead to a
-	// rejection when submitted 
+	// rejection when submitted
 	this.graylistDirectories = [
 		'frameworks'
 	];
@@ -1746,7 +1744,7 @@ iOSBuilder.prototype.validate = function validate(logger, config, cli) {
 					isDir = fs.statSync(path.join(dir, filename)).isDirectory();
 
 				// if we have a platform resource dir, then this will not be copied and we should be ok
-				if (platformsRegExp.test(lcaseFilename)) {
+				if (ti.allPlatformNames.indexOf(lcaseFilename) != -1) {
 					return;
 				}
 
